@@ -3,7 +3,13 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-stone-900 flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/gravel.png')]" />
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/duck-u-logo.jpg')" }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-stone-950/75" aria-hidden />
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/gravel.png')]" aria-hidden />
       <div className="tire-track-overlay" />
 
       <div className="absolute -left-20 top-0 bottom-0 w-40 bg-yellow-400/5 rotate-12 transform skew-x-12 hidden lg:block" />
