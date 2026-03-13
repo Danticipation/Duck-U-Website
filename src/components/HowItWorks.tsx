@@ -20,9 +20,9 @@ const HowItWorks = () => {
   return (
     <section
       id="how"
-      className="border-t border-yellow-400/10 bg-gradient-to-b from-stone-950 to-stone-900 py-20"
+      className="border-t border-yellow-400/10 bg-gradient-to-b from-stone-950 to-stone-900 py-12 sm:py-16 md:py-20"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-10 max-w-2xl">
           <h2 className="duck-headline mb-4 text-3xl font-black tracking-tight">
             How Duck U works

@@ -2,9 +2,9 @@ const Scoring = () => {
   return (
     <section
       id="points"
-      className="border-t border-yellow-400/10 bg-stone-950 py-20"
+      className="border-t border-yellow-400/10 bg-stone-950 py-12 sm:py-16 md:py-20"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <h2 className="duck-headline mb-4 text-3xl font-black tracking-tight">

@@ -2,9 +2,9 @@ const Privacy = () => {
   return (
     <section
       id="privacy"
-      className="border-t border-yellow-400/10 bg-stone-950 py-16"
+      className="border-t border-yellow-400/10 bg-stone-950 py-12 sm:py-16"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="duck-headline mb-4 text-2xl font-black tracking-tight">
           Privacy-first by design
         </h2>

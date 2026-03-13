@@ -1,7 +1,7 @@
 const Culture = () => {
   return (
-    <section className="border-t border-yellow-400/10 bg-gradient-to-b from-stone-900 to-stone-950 py-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 md:flex-row md:items-center">
+    <section className="border-t border-yellow-400/10 bg-gradient-to-b from-stone-900 to-stone-950 py-12 sm:py-16 md:py-20">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 sm:gap-10 px-4 sm:px-6 md:flex-row md:items-center">
         <div className="flex-1 space-y-4">
           <h2 className="duck-headline text-3xl font-black tracking-tight">
             Built on real Jeep ducking culture

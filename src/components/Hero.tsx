@@ -8,42 +8,42 @@ const Hero = () => {
 
       <div className="absolute -left-20 top-0 bottom-0 w-40 bg-yellow-400/5 rotate-12 transform skew-x-12 hidden lg:block" />
 
-      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="inline-block px-3 py-1 bg-yellow-400 text-black font-black uppercase tracking-tighter text-sm skew-x-[-10deg]">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="space-y-6 sm:space-y-8">
+          <div className="inline-block px-3 py-1.5 bg-yellow-400 text-black font-black uppercase tracking-tighter text-sm skew-x-[-10deg]">
             The Streets are Your Pond
           </div>
 
-          <h1 className="duck-headline text-5xl md:text-6xl lg:text-7xl font-black leading-none mb-6">
+          <h1 className="duck-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 sm:mb-6">
             DON&apos;T BE WACK,
             <br />
             DO QUACK!
           </h1>
 
-          <p className="max-w-2xl text-xl md:text-2xl text-zinc-300 mb-10">
+          <p className="max-w-2xl text-lg sm:text-xl md:text-2xl text-zinc-300 mb-8 sm:mb-10">
             The silly-competitive Jeep ducking app.
-            <br />
-            Scan QR stickers → earn points → trash-talk your way to Supreme
-            Duckinator.
+            <br className="hidden sm:block" />
+            <span className="sm:inline">Scan QR stickers → earn points → trash-talk your way to Supreme Duckinator.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href="https://ducku.app"
               target="_blank"
-              className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-lg px-8 py-4 rounded-2xl flex items-center justify-center gap-3 transition shadow-xl shadow-yellow-400/30"
+              rel="noopener noreferrer"
+              className="min-h-[48px] bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-4 rounded-2xl flex items-center justify-center gap-2 sm:gap-3 transition shadow-xl shadow-yellow-400/30 active:scale-[0.98]"
             >
               📲 Download Duck U (iOS &amp; Android)
             </a>
             <a
               href="#how"
-              className="border-2 border-yellow-400 hover:bg-yellow-400/10 font-bold text-lg px-8 py-4 rounded-2xl transition text-yellow-400"
+              className="min-h-[48px] border-2 border-yellow-400 hover:bg-yellow-400/10 font-bold text-base sm:text-lg px-6 sm:px-8 py-4 rounded-2xl transition text-yellow-400 flex items-center justify-center active:scale-[0.98]"
             >
               See how it works →
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4 text-sm opacity-75">
+          <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 text-sm opacity-75">
             <div>🔥 Created in Scottsdale, AZ – played everywhere 🐦‍🔥</div>
             <div>🔒 No personal info collected or sold. Ever! 🔒</div>
           </div>
