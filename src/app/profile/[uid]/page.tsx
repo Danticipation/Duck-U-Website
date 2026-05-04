@@ -1,9 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { QRCodeSVG } from 'qrcode.react';
-import { db } from '@/lib/firebase';
+import { initializeApp, getApps } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
+const firebaseConfig = { apiKey: 'AIzaSyCWGhozVDFASht0KWJc4zGXRemXXcnyo2Q', authDomain: 'duck-u.firebaseapp.com', projectId: 'duck-u', storageBucket: 'duck-u.firebasestorage.app', messagingSenderId: '153710852057', appId: '1:153710852057:web:f3bf228789bd0add158bc8', };
+
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0]; const db = getFirestore(app);
 
 type PublicProfile = {
   uid: string;
@@ -27,8 +32,8 @@ function sanitize(raw: any, uid: string): PublicProfile {
   };
 }
 
-export default function ProfilePage({ params }: { params: { uid: string } }) {
-  const { uid } = params;
+export default function ProfilePage({ params }: { params: Promise<{ uid: string }> }) {
+  const { uid } = use(params);
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -61,10 +66,10 @@ export default function ProfilePage({ params }: { params: { uid: string } }) {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
-        <div className="rounded-3Xl bg-neutral-900 shadow-xl pad-6 pt-8 pb-6 relative overflow-hidden">
+        <div className="rounded-3xl bg-neutral-900 shadow-xl px-6 pt-8 pb-6 relative overflow-hidden">
           <div className="absolute inset-x-0 top-0 h-1.5 bg-yellow-300" />
           <div className="text-center px-6 pt-8 pb-4">
-            <div className="text.xs tracking-widest text-neutral-400 uppercase mb-1">Duck U</div>
+            <div className="text-xs tracking-widest text-neutral-400 uppercase mb-1">Duck U</div>
             <h1 className="text-2xl font-black tracking-tight">
               {loading ? 'Loading...' : error ? 'Ducker not found' : profile?.displayName ?? 'Ducker'}
             </h1>
@@ -77,11 +82,11 @@ export default function ProfilePage({ params }: { params: { uid: string } }) {
             <div className="grid grid-cols-2 gap-3 pb-6">
               <div className="rounded-xl bg-neutral-800 text-center py-4">
                 <div className="text-2xl font-bold text-yellow-300">{profile.totalPoints}</div>
-                <div className="text[-10px] uppercase tracking-widest text-neutral-400 mt-1">Total points</div>
+                <div className="text-[10px] uppercase tracking-widest text-neutral-400 mt-1">Total points</div>
               </div>
               <div className="rounded-xl bg-neutral-800 text-center py-4">
                 <div className="text-2xl font-bold text-yellow-300">{profile.bestStreak}</div>
-                <div className="text[-10px] uppercase tracking-widest text-neutral-400 mt-1">Best streak</div>
+                <div className="text-[10px] uppercase tracking-widest text-neutral-400 mt-1">Best streak</div>
               </div>
             </div>
           )}
@@ -89,7 +94,7 @@ export default function ProfilePage({ params }: { params: { uid: string } }) {
           {profile && profile.badges.length > 0 && (
             <div className="flex flex-wrap gap-2 pb-4 justify-center">
               {profile.badges.map((b) => (
-                <span key={b} className="txt-xs px-3 py-1 rounded-full bg-yellow-300/10 text-yellow-300 border border-yellow-300/20">{b}</span>
+                <span key={b} className="text-xs px-3 py-1 rounded-full bg-yellow-300/10 text-yellow-300 border border-yellow-300/20">{b}</span>
               ))}
             </div>
           )}
@@ -110,7 +115,7 @@ export default function ProfilePage({ params }: { params: { uid: string } }) {
           </p>
         </div>
         <p className="text-center text-neutral-600 text-xs mt-6">
-          Duck U § ducku.app
+          Duck U · ducku.app
         </p>
       </div>
     </main>
