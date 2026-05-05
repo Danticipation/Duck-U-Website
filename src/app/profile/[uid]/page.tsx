@@ -105,7 +105,7 @@ export default function ProfilePage({ params }: { params: Promise<{ uid: string 
             </div>
           )}
           <a
-            href="/#install"
+            href="/"
             className="block w-full bg-yellow-300 hover:bg-yellow-200 text-neutral-950 text-center font-bold py-3 rounded-xl transition"
           >
             Get Duck U
